@@ -1,0 +1,187 @@
+@font-face {
+  font-family: GothamPro;
+  src: url(./assets/fonts/GothamPro-Light.eot);
+  src: url(./assets/fonts/GothamPro-Light.woff2) format("woff2"),url(./assets/fonts/GothamPro-Light.woff) format("woff"),url(./assets/fonts/GothamPro-Light.ttf) format("truetype");
+  font-weight: 100;
+  font-style: normal
+}
+
+/* Variables*/
+$body-background: hsl(0, 0%, 98%);
+$white: #ffffff;
+$shadow: #f2f2f2;
+$headline-color: #3d3b3d;
+$strapline-color: darkgrey;
+$text-color: #000000;
+$label-color: #747474;
+$input-border: rgb(233, 233, 233);
+$checkmark-background: #eee;
+$checkmark-hover: #ccc;
+$checked-background: #46ade1;
+$btn-hover: #29a555;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "GothamPro";
+  color: $text-color;
+  background: $body-background;
+  margin: 0;
+  height: 100vh;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  background: $white;
+  padding: 2.1875rem;
+  width: 100%;
+  max-width: 25rem;
+  min-width: 12.5rem;
+  border-radius: 0.125rem;
+  box-shadow: 0 0 0.125rem 0.125rem $shadow;
+
+  .greenLogo {
+    width: 6.25rem;
+    padding: 0.9375rem 0;
+  }
+
+  h1 {
+    font-family: "GothamPro";
+    font-weight: 600;
+    font-size: 1.625rem;
+    padding: 0.3125rem 0rem;
+    color: $headline-color;
+  }
+
+  h2 {
+    font-family: "GothamPro";
+    font-weight: 400;
+    font-size: 0.875rem;
+    padding: 0.3125rem 0;
+    color: $strapline-color;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  padding: 1.25rem 0;
+
+  input[type="text"] {
+    height: 2.25rem;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid $input-border;
+    padding-left: 0.3125rem;
+  }
+
+  label {
+    font-size: 0.75rem;
+    padding: 0.5625rem 0.125rem;
+    color: $label-color;
+  }
+}
+
+.checkboxContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.625rem 0;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 2.1875rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  font-size: 1.375rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.125rem;
+  width: 1.125rem;
+  border-radius: 0.1875rem;
+  border: 0.0625rem solid $label-color;
+  background-color: $checkmark-background;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: $checkmark-hover;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: $checked-background;
+  border: none;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 0.4375rem;
+  top: 0.25rem;
+  width: 0.1875rem;
+  height: 0.4375rem;
+  border: solid $white;
+  border-width: 0 0.125rem 0.125rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkboxLabel {
+  font-size: 0.75rem;
+  padding: 0 0 0.75rem 1.5625rem !important;
+  color: $text-color !important;
+  font-family: "GothamPro";
+}
+
+button {
+  width: 6.25rem;
+  padding: 0.625rem;
+  border-radius: 0.4375rem;
+  border: 0.0625rem solid $input-border;
+  background-color: $white;
+  color: $text-color;
+  font-family: "GothamPro";
+
+  &:hover {
+    background-color: $btn-hover;
+    color: $white;
+  }
+}
