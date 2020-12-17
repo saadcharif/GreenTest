@@ -1,13 +1,12 @@
 # Green.
-Since there was no specifications for mobile functions I have not created any mobile queries but i tested it with Chrome Tools and the content remains same shape across all devices.
 
-I have created a hover state for the sign button to take the color of the logo.
+I have created a hover state for the sign in button.
 
-Gotham been using as the font family and included in the assets
+Gotham is used as the font family and included in the assets, bound to a font face.
 
-I have used Rem for the sizes because it would automatically scale up and down my elements.
+I have used rem for the sizes because it would automatically scale up and down my elements.
 
-Padding has been created to assuming the right value from the image provided.
+Padding has been created assuming the right values from the image provided.
 
 # Getting Started with Create React App
 
